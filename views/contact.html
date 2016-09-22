@@ -8,7 +8,7 @@
       <th>Contact</th>
       <th>Gender</th>
       <th>Comments</th>
-      <th></th>
+      <th>Manage</th>
     </tr>
   </thead>
   <tbody ng-repeat="person in persons">
@@ -21,7 +21,7 @@
       <td>{{person.comment}}</td>
       <td>
         <a ui-sref="home" ng-click="editPost(person)" ><i class="glyphicon glyphicon-edit"></i></a>
-        <a href=""> <i class="glyphicon glyphicon-remove"></i></a>
+        <a ui-sref="contact" ng-click="deletePost(person)"> <i class="glyphicon glyphicon-remove"></i></a>
       </td>
     </tr>
   </tbody>
