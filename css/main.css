@@ -1,14 +1,22 @@
 
 
 /* ==========================================================================
-   Author's custom styles
+   Author's custom styles 
    ========================================================================== */
+
 
 form {
   outline-color: #f28496;
   outline-style: solid;
   padding: 15px;
   margin-top: 15px;
+}
+.form-horizontal{
+  text-align: center;
+}
+
+.form-control{
+  border: 2px solid #f28496; 
 }
 
 textarea{
