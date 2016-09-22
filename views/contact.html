@@ -1,0 +1,28 @@
+<table class="table table-bordered table-hover table-responsive">
+  <caption class="text-center" style="color: #f28496;">Contact Lists</caption>
+  <thead>
+    <tr class="text-center">
+      <th>S. No.</th>
+      <th>Namme</th>
+      <th>eMail</th>
+      <th>Contact</th>
+      <th>Gender</th>
+      <th>Comments</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody ng-repeat="person in persons">
+    <tr>
+      <td>{{$index+1}}</td>
+      <td>{{person.name}}</td>
+      <td>{{person.email}}</td>
+      <td>{{person.contact}}</td>
+      <td>{{person.gender}}</td>
+      <td>{{person.comment}}</td>
+      <td>
+        <a ui-sref="home" ng-click="editPost(person)" ><i class="glyphicon glyphicon-edit"></i></a>
+        <a href=""> <i class="glyphicon glyphicon-remove"></i></a>
+      </td>
+    </tr>
+  </tbody>
+</table>
