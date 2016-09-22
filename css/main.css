@@ -6,15 +6,28 @@
 
 
 
+  .navbar{
+      background-color: #f28496;
+  }
+
+.navbar-brand{
+  color: white;
+}
+
+ul li a{
+  color: white;
+}
 
 
-
-
-
-
-
-
-
+footer{
+  text-align: center;
+  background-color: #f28496;
+}
+footer p {
+  color: white;
+  font-size: 18px;
+  padding: 10px;
+}
 
 
 
