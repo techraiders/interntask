@@ -4,7 +4,17 @@
    Author's custom styles
    ========================================================================== */
 
+form {
+  outline-color: #f28496;
+  outline-style: solid;
+  padding: 15px;
+  margin-top: 15px;
+}
 
+textarea{
+  resize: none;
+  min-height: 300px;
+}
 
   .navbar{
       background-color: #f28496;
