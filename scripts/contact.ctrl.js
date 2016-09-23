@@ -10,6 +10,7 @@
         $scope.postForm = function(person) {
           if (person) {
             $scope.persons.push(person);
+            alert("form submitted");
           }
         }
         $scope.editPost = function(person) {
@@ -19,6 +20,12 @@
         $scope.deletePost = function(person) {
           var index = $scope.persons.indexOf(person);
           $scope.persons.splice(index,1);
+        }
+        $scope.saveEdit = function(person) {
+          if (person) {
+            $scope.editing = false;
+            postForm(person);
+          };
         }
       })
 })();

@@ -1,17 +1,17 @@
 [
   {
-    "name"    : "navneet",
+    "name"    : "Navneet Prakash",
     "email"   : "hello_navneet@hotmail.com",
     "contact" : "9527936489",
-    "gender"  : "male",
+    "gender"  : "Male",
     "dob"     : "19/01/1992",
     "comment": "Your app is amazing."
   },
   {
-    "name"    : "arun",
-    "email"   : "arun@gmail.com",
+    "name"    : "Nitish Kumar",
+    "email"   : "nitish@gmail.com",
     "contact" : "9876543210",
-    "gender"  : "male",
+    "gender"  : "Male",
     "dob"     : "01/01/1995",
     "comment": "You did a good job"
   }

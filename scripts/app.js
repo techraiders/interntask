@@ -4,7 +4,7 @@ angular.module("contactApp", ['ui.router'])
     $stateProvider
       .state('home', {
         url: '/home',
-        templateUrl: 'views/form.html'
+        templateUrl: 'views/home.html'
       })
       .state('contact', {
         url: '/contact',

@@ -1,31 +1,36 @@
 <br/>
+<h3>Important Instructions</h3>
+<ul>
+  <li>After submitting the form visit CONTACT page</li>
+  <li>There you can see your submitted information</li>
+  <li>You can edit or delete your posted data visiting CONTACT page.</li>
+</ul>
 
-          <p>
-            <pre> {{person | json}}</pre>
-          </p>
-
-<form class="form-horizontal" name="commentForm" novalidate>
+<form class="form-horizontal" name="commentForm" novalidate ng-submit="onSubmit()">
             <div class="form-group">
               <label class="col-sm-3 control-label" for="Name">Name:</label>
                 <div class="col-sm-9">
-                  <input class="form-control" type="text" name="name" placeholder="your name" ng-required="true" ng-model="person.name">
-                  <p class="error validationerror" ng-show="commentForm.name.$invalid && commentForm.name.$touched">*You must fill out your name</p>
+                  <input class="form-control" type="text" name="name" placeholder="your name" ng-required="true" ng-model="person.name" ng-pattern="/^[A-Za-z ]{3,20}$/">
+                  <p class="error" ng-show="commentForm.name.$touched && commentForm.name.$error.required"> *Your name is required </p>
+                    <p class="error" ng-show="commentForm.name.$dirty && commentForm.name.$error.pattern"> *Please enter a valid name. </p>
                 </div>
             </div>
 
             <div class="form-group">
               <label class="col-sm-3 control-label" for="email">e-Mail:</label>
                 <div class="col-sm-9">
-                  <input class="form-control" type="email" name="email" placeholder="your email" ng-required="true" ng-model="person.email" ng-disabled="!person.name">
-                  <p class="error validationerror" ng-show="commentForm.email.$invalid && commentForm.email.$touched">*You must fill out your email</p>
+                  <input class="form-control" type="email" name="email" placeholder="your email" ng-required="true" ng-model="person.email" ng-disabled="!person.name" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/">
+                    <p class="error" ng-show="commentForm.email.$touched && commentForm.email.$error.required"> *Your email is required </p>
+                    <p class="error" ng-show="commentForm.email.$dirty && commentForm.email.$error.pattern"> *Please enter a valid email address. </p>
                 </div>
               </div>
-
+ 
             <div class="form-group">            
               <label class="col-sm-3 control-label" for="contact">Contact no:</label>
                 <div class="col-sm-9">
-                  <input class="form-control" type="text" name="contact" placeholder="you phone number" ng-required="true" ng-minlength="10" ng-maxlength="10" ng-model="person.contact" ng-disabled="!person.email">
-                  <p class="error validationerror" ng-show="commentForm.contact.$invalid && commentForm.contact.$touched">*Your mobile number must be 10 characters long</p>
+                  <input class="form-control" type="text" name="contact" placeholder="your 10 digit mobile number" ng-required="true" ng-minlength="10" ng-maxlength="10" maxlength="10" ng-model="person.contact" ng-disabled="!person.email" ng-pattern="/^[0-9]{10,10}$/">
+                  <p class="error" ng-show="commentForm.contact.$touched && commentForm.contact.$error.required"> *Your mobile number is required </p>
+                  <p class="error" ng-show="commentForm.contact.$dirty&&commentForm.contact.$error.pattern">*Only 10 Digit Numbers Allowed.</p>
                 </div>
             </div>
 
@@ -59,9 +64,7 @@
 
 
               <div class="form-group">
-                <input class="btn btn-success" type="submit" value="Submit" ng-click="postForm(person)" ng-if="!editing" ng-disabled="!person.comment">
-                <input class="btn btn-success" type="submit" value="Update" ng-click="" ng-if="editing">
-
-                <input class="btn btn-warning" type="reset">
+                <input class="btn btn-success" type="submit" value="Submit" ng-if="!editing" ng-disabled="commentForm.$invalid" ui-sref="contact" ng-click="postForm(person)">
+                <input class="btn btn-success" type="submit" value="Save Changes" ng-if="editing" ng-click="saveEdit(person)" ng-disabled="commentForm.$invalid" ui-sref="contact">
               </div>
           </form>
