@@ -4,8 +4,26 @@
    Author's custom styles 
    ========================================================================== */
 
+.about{
+  color: #f28496;
+  font-weight: bolder;
+  text-decoration: underline;
+  text-transform: capitalize;
+  text-align: center;
+}
+
 input.ng-invalid.ng-touched, select.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
   border: 3px solid #DA3637;
+}
+input.ng-valid.ng-touched, select.ng-valid.ng-touched, textarea.ng-valid.ng-touched {
+  border: 2px solid #509D12;
+}
+/*.ng-invalid .btn {
+  background: gray;
+}*/
+.error{
+  color: red;
+  padding-top: 5px;
 }
 
 form {

@@ -1,5 +1,5 @@
 angular.module("contactApp", ['ui.router'])
-  .config(function($stateProvider){
+  .config(function($stateProvider, $urlRouterProvider){
 
     $stateProvider
       .state('home', {
@@ -10,8 +10,10 @@ angular.module("contactApp", ['ui.router'])
         url: '/contact',
         templateUrl: 'views/contact.html'
       })
-      .state('msg', {
-        url: '/home',
-        templateUrl: 'views/successfullmsg.html'
-      });
+      .state('about', {
+        url: '/about',
+        templateUrl: 'views/about.html'
+      })
+
+      $urlRouterProvider.otherwise('/home');
   });
