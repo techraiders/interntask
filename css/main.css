@@ -4,6 +4,9 @@
    Author's custom styles 
    ========================================================================== */
 
+input.ng-invalid.ng-touched, select.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+  border: 3px solid #DA3637;
+}
 
 form {
   outline-color: #f28496;
@@ -16,7 +19,7 @@ form {
 }
 
 .form-control{
-  border: 2px solid #f28496; 
+  border: 1px solid #f28496; 
 }
 
 textarea{

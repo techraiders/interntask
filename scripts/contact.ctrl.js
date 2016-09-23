@@ -18,7 +18,7 @@
         }
         $scope.deletePost = function(person) {
           var index = $scope.persons.indexOf(person);
-          $scope.persons.splice(index);
+          $scope.persons.splice(index,1);
         }
       })
 })();
