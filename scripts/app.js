@@ -1,5 +1,5 @@
 angular.module("contactApp", ['ui.router'])
-  .config(function($stateProvider, $urlRouterProvider){
+  .config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
     $stateProvider
       .state('home', {
@@ -16,4 +16,6 @@ angular.module("contactApp", ['ui.router'])
       })
 
       $urlRouterProvider.otherwise('/home');
+
+       $locationProvider.html5Mode(true);
   });
